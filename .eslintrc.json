@@ -4,6 +4,25 @@
   "plugins": ["@nrwl/nx"],
   "overrides": [
     {
+      "files": ["*.graphql"],
+      "parser": "@graphql-eslint/eslint-plugin",
+      "plugins": ["@graphql-eslint"],
+      "rules": {
+        "eol-last": "off",
+        "prettier/prettier": "off",
+        "@graphql-eslint/naming-convention": [
+          "error",
+          {
+            "OperationDefinition": {
+              "style": "PascalCase",
+              "forbiddenPrefixes": ["Get"],
+              "forbiddenSuffixes": ["Query", "Mutation", "Subscription"]
+            }
+          }
+        ]
+      }
+    },
+    {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
         "@nrwl/nx/enforce-module-boundaries": [

@@ -1,0 +1,5 @@
+query TestUser {
+  user {
+    id
+  }
+}

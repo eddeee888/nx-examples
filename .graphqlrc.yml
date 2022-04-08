@@ -1,0 +1,6 @@
+projects:
+  - default:
+    schema:
+      - './apps/my-next-app/schema.graphql'
+    documents:
+      - './apps/my-next-app/**/*.graphql'

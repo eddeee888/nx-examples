@@ -42,11 +42,27 @@
         "passWithNoTests": true
       }
     },
-    "lint": {
+    "lint-error-wrong-parser-for-graphql": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/my-next-app/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/my-next-app/**/*.{ts,tsx,js,jsx,graphql}"]
+      }
+    },
+    "lint-pages-warning": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/my-next-app/**/*.{ts,tsx,js,jsx,graphql}"],
+        "eslintConfig": "apps/my-next-app/.eslintrc.pages-warning.json"
+      }
+    },
+    "lint-ok": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/my-next-app/**/*.{ts,tsx,js,jsx,graphql}"],
+        "eslintConfig": "apps/my-next-app/.eslintrc.ok.json"
       }
     }
   },
